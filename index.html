@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<meta charset="utf-8" />
+	<meta  name="viewpoint" content="initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>
+		NCR
+	</title>
+	<script>
+	var wsurl = "ws://chocolatee.com.tw:8000/";
+		function init()	{
+			InitWebSocket();
+		}
+		function InitWebSocket()	{
+			websocket = new WebSocket(wsurl);
+			websocket.onopen = function(evt)	{
+				onOpen(evt)
+			};
+			websocket.opclose = function(evt)	{
+				onClose(evt)
+			};
+			websocket.onmessage = function(evt)	{
+				onMessage(evt)
+			};
+			websocket.onerror = function(evt)	{
+				onError(evt)
+			};
+		}
+		function onOpen(evt)	{
+			console.log("Connect");
+		}
+		function onClose(evt)	{
+			console.log("Disconnect");
+		}
+		function onMessage(evt)	{
+			console.log(evt.data);
+				
+		}
+		function onError(evt)	{
+			console.log("Error" + evt.data);
+		}
+		window.addEventListener("load", init, false);
+	</script>
+	<body>
+		<header>
+			NCR
+		</header>
+		<div id="map"></div>
+		<script type="text/javascript">
+			function initMap()	{
+				var taiwan = {lat: 24.78, lng: 121.68};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 7,
+					center: taiwan
+				});
+				var marker = new google.maps.Marker({
+					position: taiwan,
+					map: map
+				});
+			}
+
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD89qw5thzpEqYQwT-mRQiVg3OxCb1Vzo8&callback=initMap">
+		</script>
+	</body>
+	</html>
+<!--121.68  	24.78-->
