@@ -1,8 +1,9 @@
 html ,body	{
 	background-color: #000000;
 	font-family: Noto Sans CJK TC Reguler;
-	width: 100%;
-	height: 100%;
+	width: 95%;
+	height: 95%;
+	margin: 10px;
 }
 header	{
 	color: #ffffff;
@@ -11,5 +12,86 @@ header	{
 }
 #map 	{
 	height: 100%;
-	width: 100%;
+	width: 40%;
+	margin-left: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+	float: left;
+}
+#white	{
+	height: 90%;
+	width: 90%;
+	margin: 30px auto;
+	border-radius: 20px;
+	padding: 30px;
+	background-color: #ffffff;
+}
+/*#circle	{
+	height: 200px;
+	width: 200px;
+	background-color: #EAC100;
+	border-radius: 99em;
+	float: right;
+	margin-right: 30px;
+	margin-top: 30px;
+	text-align: center;
+}
+*/
+/*#content1	{
+	height: 60px;
+	width: 500px;
+	margin-left: 500px;
+	margin-right: 230px;
+	margin-top: 30px;
+	background-color: #000000;
+}
+#content2	{
+	height: 60px;
+	width: 500px;
+	margin-left: 500px;
+	margin-right: 230px;
+	margin-top: 50px;
+	background-color: #000000;
+}
+*/
+div	{
+	font-family: Noto Sans TC, Open Sans;
+}
+#circle	{
+	height: 300px;
+	width: 300px;
+	background-color: #ffc400;
+	border-radius: 99em;
+	text-align: center;
+	float: right;
+	margin-top: 5%;
+	margin-right: 5%;
+	line-height: 300px;
+	font-size: 200px;
+	color: #FFFFFF;
+}
+#content1	{
+	height: 20%;
+	width:77%;
+	background-color: #000000;
+	margin-top: 5%;
+}
+#content2	{
+	height: 30%;
+	width: 70%;
+	background-color: #000000;
+	margin-top: 5%;
+}
+#area1	{
+	float: right;
+	height: 50%;
+	width: 55%;
+}
+#content3	{
+	clear: both;
+	height: 90%;
+	width: 90%;
+	border-radius: 20px;
+	margin-top: 100px;
+	background-color: #d8d8d8;
 }

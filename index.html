@@ -44,7 +44,15 @@
 		<header>
 			NCR
 		</header>
-		<div id="map"></div>
+		<div id="white">
+			<div id="map"></div>
+			<div id="area1">
+			<div id="circle">7</div>
+			<div id="content1"></div>
+			<div id="content2"></div>
+			<div id="content3"></div>
+			</div>
+		</div>
 		<script type="text/javascript">
 			function initMap()	{
 				var taiwan = {lat: 24.78, lng: 121.68};
@@ -55,11 +63,11 @@
 				var marker = new google.maps.Marker({
 					position: taiwan,
 					map: map
-				});
+				}); 
 			}
 
 		</script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD89qw5thzpEqYQwT-mRQiVg3OxCb1Vzo8&callback=initMap">
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW5s8PxmXKGpOVM8E79H4Wwb_hmSrhJYs&callback=initMap">
 		</script>
 	</body>
 	</html>
