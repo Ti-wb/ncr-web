@@ -78,7 +78,8 @@ div	{
 	color: #FFFFFF;
 	text-align: center;
 	font-size: 50px;
-	line-height: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 #content2	{
 	height: 30%;
