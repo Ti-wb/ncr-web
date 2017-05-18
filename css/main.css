@@ -8,7 +8,7 @@ html ,body	{
 header	{
 	color: #ffffff;
 	font-family: Noto Sans;
-	font-size: 20px;
+	font-size: 30px;
 }
 #map 	{
 	height: 100%;
@@ -55,7 +55,7 @@ header	{
 }
 */
 div	{
-	font-family: Noto Sans TC, Open Sans;
+	font-family: Noto Sans, Open Sans;
 }
 #circle	{
 	height: 300px;
@@ -75,12 +75,20 @@ div	{
 	width:77%;
 	background-color: #000000;
 	margin-top: 5%;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 50px;
+	line-height: 60px;
 }
 #content2	{
 	height: 30%;
 	width: 70%;
 	background-color: #000000;
 	margin-top: 5%;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 50px;
+	line-height: 100px;
 }
 #area1	{
 	float: right;

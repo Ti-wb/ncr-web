@@ -7,6 +7,14 @@
 	</title>
 	<script>
 	var wsurl = "ws://chocolatee.com.tw:8000/";
+	var recive;
+	var source;
+	var switcher;
+	var magnitude;
+	var location1;
+	var name;
+	var map;
+	var marker;
 		function init()	{
 			InitWebSocket();
 		}
@@ -33,21 +41,88 @@
 		}
 		function onMessage(evt)	{
 			console.log(evt.data);
-				
+			recive = (evt.data);
+			resolve(recive);	
 		}
 		function onError(evt)	{
 			console.log("Error" + evt.data);
 		}
+		function resolve(recive)	{
+			switch (recive)	{
+				case '-10':
+					switcher = 1;
+					break;
+				case '-20':
+					switcher = 2;
+					break;
+				case '-30':
+					switcher = 3;
+					break;
+				default:
+					switch (switcher)	{
+						case 1:
+							source = recive;
+							switch(source)	{
+								case '1':
+									location1 = {lat: 24.53, lng: 121.11};
+									name = '台東大武';
+									NewMarker(location1);
+									console.log(source);
+									break;
+								case '2':
+									location1 = {lat: 24.34, lng: 121.30};
+									name = '新竹新埔';
+									NewMarker(location1);
+									break;
+								case '3':
+									location1 = {lat: 24.63, lng: 121.70};
+									name = '新北林口';
+									NewMarker(location1);
+									break;
+								case '4':
+									location1 = {lat: 25.11, lng: 121.80};
+									name = '新北瑞芳';
+									NewMarker(location1);
+									break;
+								case '5':
+									location1 = {lat: 24.78, lng: 121.68};
+									name = '新北金山';
+									NewMarker(location1);
+									break;
+								default:
+								console.log(source + 'Error');
+							}
+							break;
+						case 2:
+							magnitude = parseInt(recive) + 10;
+							document.getElementById("circle").innerHTML= magnitude;
+							break;
+						case 3:
+							break;
+						default:
+							console.log("Error");
+			}
+		}
+	}
+		function NewMarker(location){
+			document.getElementById("content2").innerHTML = name;
+			marker.setMap(null);
+			marker = new google.maps.Marker({
+				position: location1,
+				map: map
+			})
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+		}
 		window.addEventListener("load", init, false);
 	</script>
-	<body>
+	<body onload="showtime()"> 
 		<header>
 			NCR
 		</header>
 		<div id="white">
 			<div id="map"></div>
 			<div id="area1">
-			<div id="circle">7</div>
+			<div id="circle">0</div>
 			<div id="content1"></div>
 			<div id="content2"></div>
 			<div id="content3"></div>
@@ -56,16 +131,31 @@
 		<script type="text/javascript">
 			function initMap()	{
 				var taiwan = {lat: 24.78, lng: 121.68};
-				var map = new google.maps.Map(document.getElementById('map'), {
+					map = new google.maps.Map(document.getElementById('map'), {
 					zoom: 7,
 					center: taiwan
 				});
-				var marker = new google.maps.Marker({
+					marker = new google.maps.Marker({
 					position: taiwan,
 					map: map
-				}); 
+				});
+				marker.setMap(null);
+				
 			}
-
+			function showtime()	{
+				var Nowdate=new Date();
+				var h=Nowdate.getHours();
+				var m=Nowdate.getMinutes();
+				if (parseInt(m)<10)	{
+					m = '0' + m;
+				}
+				var s=Nowdate.getSeconds();
+				if (parseInt(s)<10)	{
+					s = '0' + s;
+				}
+				document.getElementById('content1').innerHTML = (Nowdate.getMonth()+1) + '/' + (Nowdate.getDate()) + ' ' + h + ':' + m + ':' + s;
+				setTimeout('showtime()',1000);
+			}
 		</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW5s8PxmXKGpOVM8E79H4Wwb_hmSrhJYs&callback=initMap">
 		</script>
