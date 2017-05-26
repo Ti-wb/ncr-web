@@ -111,7 +111,7 @@
 				position: location1,
 				map: map
 			})
-			marker.setAnimation(google.maps.Animation.BOUNCE);
+			marker.setAnimation(google.maps.A0nimation.BOUNCE);
 		}
 		window.addEventListener("load", init, false);
 	</script>
@@ -122,7 +122,7 @@
 		<div id="white">
 			<div id="map"></div>
 			<div id="area1">
-			<div id="circle">0</div>
+			<div id="circle"> <span id="level">震度</span> 0</div>
 			<div id="content1"></div>
 			<div id="content2"></div>
 			<div id="content3"></div>
@@ -133,7 +133,8 @@
 				var taiwan = {lat: 24.78, lng: 121.68};
 					map = new google.maps.Map(document.getElementById('map'), {
 					zoom: 7,
-					center: taiwan
+					center: taiwan,
+					mapTypeId: 'hybrid'
 				});
 					marker = new google.maps.Marker({
 					position: taiwan,
