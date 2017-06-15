@@ -19,6 +19,8 @@ header	{
 	background-color: #000000;
 	opacity: 0.5;
 	line-height: 100%;
+	display: inline-flex;
+	justify-content: space-between;
 }
 #map 	{
 	min-height: 100%;
@@ -46,16 +48,6 @@ div	{
 	line-height: 300px;
 	font-size: 50px;
 	color: #FFFFFF;
-	z-index: 2;
-}
-#content1	{
-	height: 10%;
-	width:30%;
-	background-color: #000000;
-	margin-top: 5%;
-	color: #FFFFFF;
-	text-align: center;
-	font-size: 50px;
 	z-index: 2;
 }
 #content2	{

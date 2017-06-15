@@ -117,12 +117,13 @@
 	</script>
 	<body onload="showtime()"> 
 		<header>
-			NCR
+			<div id="title">NCR</div>
+			<div id="time"></div>
+			<div id="status"></div>
 		</header>
 		<div id="map"></div>
 		<div id="area1">
 			<div id="circle"> <span id="level">震度</span> 0</div>
-			<div id="content1"></div>
 			<div id="content2"></div>
 		</div>
 		<script type="text/javascript">
@@ -151,7 +152,7 @@
 				if (parseInt(s)<10)	{
 					s = '0' + s;
 				}
-				document.getElementById('content1').innerHTML = (Nowdate.getMonth()+1) + '/' + (Nowdate.getDate()) + ' ' + h + ':' + m + ':' + s;
+				document.getElementById('time').innerHTML = (Nowdate.getMonth()+1) + '/' + (Nowdate.getDate()) + ' ' + h + ':' + m + ':' + s;
 				setTimeout('showtime()',1000);
 			}
 		</script>
